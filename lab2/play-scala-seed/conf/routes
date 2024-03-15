@@ -1,0 +1,7 @@
+# Routes
+
+POST     /products                   controllers.ProductController.create()
+GET      /products/:productId        controllers.ProductController.get(productId: Long)
+GET      /products                   controllers.ProductController.getAll()
+PUT      /products/:productId        controllers.ProductController.update(productId: Long)
+DELETE   /products/:productId        controllers.ProductController.delete(productId: Long)

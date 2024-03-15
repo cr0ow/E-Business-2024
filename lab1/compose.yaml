@@ -1,0 +1,3 @@
+services:
+    run:
+        build: .
