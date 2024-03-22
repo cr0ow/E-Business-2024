@@ -1,7 +1,24 @@
 # Routes
 
-POST     /products                   controllers.ProductController.create()
-GET      /products/:productId        controllers.ProductController.get(productId: Long)
-GET      /products                   controllers.ProductController.getAll()
+# Products
+POST     /products                   controllers.ProductController.add
+GET      /products/:productId        controllers.ProductController.getById(productId: Long)
+GET      /products                   controllers.ProductController.getAll
 PUT      /products/:productId        controllers.ProductController.update(productId: Long)
 DELETE   /products/:productId        controllers.ProductController.delete(productId: Long)
+
+# Categories
+POST     /categories                 controllers.CategoryController.add
+GET      /categories/:categoryId     controllers.CategoryController.getById(categoryId: Long)
+GET      /categories                 controllers.CategoryController.getAll
+PUT      /categories/:categoryId     controllers.CategoryController.update(categoryId: Long)
+DELETE   /categories/:categoryId     controllers.CategoryController.delete(categoryId: Long)
+
+# Cart
+POST     /carts                       controllers.CartController.add
+GET      /carts/:cartId               controllers.CartController.getById(cartId: Long)
+GET      /carts                       controllers.CartController.getAll
+PUT      /carts/:cartId               controllers.CartController.update(cartId: Long)
+DELETE   /carts/:cartId               controllers.CartController.delete(cartId: Long)
+POST     /carts/:cartId/:productId    controllers.CartController.addToCart(cartId: Long, productId: Long)
+DELETE   /carts/:cartId/:productId    controllers.CartController.removeFromCart(cartId: Long, productId: Long)

@@ -1,0 +1,12 @@
+@* getAllCategories Template File *@
+@(categories: Seq[Category])
+
+@main("Category List") {
+    <h2>Category list</h2>
+
+    <ul>
+        @for(category <- categories) {
+            <li>@category</li>
+        }
+    </ul>
+}

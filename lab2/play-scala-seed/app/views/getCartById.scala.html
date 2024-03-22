@@ -1,0 +1,10 @@
+@* getCartById Template File *@
+@(cart: List[Long])
+
+@main("Cart") {
+    <h2>
+        @for(item <- cart) {
+            @item,
+        }
+    </h2>
+}

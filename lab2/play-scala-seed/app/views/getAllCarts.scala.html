@@ -1,0 +1,17 @@
+@* getAllCarts Template File *@
+@(carts: scala.collection.mutable.Map[Long, List[Long]])
+
+@main("Cart List") {
+    <h2>Cart list</h2>
+
+    <ul>
+        @for((key, value) <- carts) {
+            <li>
+                @key:
+                @for(v <- value) {
+                    @v,
+                }
+            </li>
+        }
+    </ul>
+}

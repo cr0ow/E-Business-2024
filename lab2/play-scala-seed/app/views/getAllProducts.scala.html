@@ -1,0 +1,12 @@
+@* getAllProducts Template File *@
+@(products: Seq[Product])
+
+@main("Product List") {
+    <h2>Product list</h2>
+
+    <ul>
+        @for(product <- products) {
+            <li>@product</li>
+        }
+    </ul>
+}

@@ -1,0 +1,23 @@
+services:
+  playframework:
+    image: lab2-mw-ebiznes
+    container_name: playframework-container
+    ports:
+      - "9000:9000"
+    expose:
+      - '9000'
+    command:
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    depends_on:
+      - ngrok
+  ngrok:
+    image: ngrok/ngrok:alpine
+    container_name: ngrok-container
+    environment:
+      NGROK_AUTHTOKEN: '2e3cxhIiTl4weFtoHBH6u5vLbS6_7BhZVfxHV6u1EdMF5ebJz'
+    command: 'http playframework-container:9000'
+    ports:
+      - '4040:4040'
+    expose:
+      - '4040'
