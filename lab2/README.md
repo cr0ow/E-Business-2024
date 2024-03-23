@@ -1,4 +1,4 @@
-**Zadanie 2 Scala**
+# Zadanie 2 Scala
 
 Należy stworzyć aplikację na frameworku Play w Scali 2.
 
