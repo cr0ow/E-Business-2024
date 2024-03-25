@@ -28,3 +28,5 @@ Demo: [lab1-demo.zip](https://github.com/cr0ow/E-Business-2024/tree/master/demos
 :white_check_mark: Należy dodać konfigurację CORS dla dwóch hostów dla metod CRUD
 
 Kod: [lab2](https://github.com/cr0ow/E-Business-2024/tree/master/lab2)
+
+Demo: ![lab2-demo](/demos/lab2-demo.mp4)
