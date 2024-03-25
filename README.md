@@ -29,4 +29,8 @@ Demo: [lab1-demo.zip](https://github.com/cr0ow/E-Business-2024/tree/master/demos
 
 Kod: [lab2](https://github.com/cr0ow/E-Business-2024/tree/master/lab2)
 
-Demo: ![lab2-demo](/demos/lab2-demo.mp4)
+Demo:
+
+<video width="640" height="480" controls>
+  <source src="demos/lab2-demo.mp4" type="video/mp4">
+</video>
