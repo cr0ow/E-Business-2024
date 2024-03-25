@@ -12,7 +12,7 @@
 
 Kod: [lab1](https://github.com/cr0ow/E-Business-2024/tree/master/lab1)
 
-Demo: [lab1-demo.zip](https://github.com/cr0ow/E-Business-2024/tree/master/demos)
+Demo: [lab1-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/e94d98f0-894b-44b0-b34a-04b0e21bb427)
 
 
 **Zadanie 2** Scala
@@ -29,6 +29,4 @@ Demo: [lab1-demo.zip](https://github.com/cr0ow/E-Business-2024/tree/master/demos
 
 Kod: [lab2](https://github.com/cr0ow/E-Business-2024/tree/master/lab2)
 
-Demo:
-
-![lab2-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/2e86731b-6093-4c80-bccd-efecfa828884)
+Demo: [lab2-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/2e86731b-6093-4c80-bccd-efecfa828884)
