@@ -31,6 +31,4 @@ Kod: [lab2](https://github.com/cr0ow/E-Business-2024/tree/master/lab2)
 
 Demo:
 
-<video width="640" height="480" controls>
-  <source src="demos/lab2-demo.mp4" type="video/mp4">
-</video>
+![lab2-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/2e86731b-6093-4c80-bccd-efecfa828884)
