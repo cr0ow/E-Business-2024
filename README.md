@@ -30,3 +30,20 @@ Demo: [lab1-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/e94d9
 Kod: [lab2](https://github.com/cr0ow/E-Business-2024/tree/master/lab2)
 
 Demo: [lab2-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/2e86731b-6093-4c80-bccd-efecfa828884)
+
+
+**Zadanie 3** Kotlin
+
+:white_check_mark: Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+
+:white_check_mark: Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
+
+:white_check_mark: Zwróci listę kategorii na określone żądanie użytkownika
+
+:white_check_mark: Zwróci listę produktów wg żądanej kategorii
+
+:x: Aplikacja obsłuży dodatkowo jedną z platform: Slack, Messenger, Webex, Skype
+
+Kod: [lab3](https://github.com/cr0ow/E-Business-2024/tree/master/lab3/ktor-sample)
+
+Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/c64de11f-8425-42a5-9378-9c111ae51657)
