@@ -47,3 +47,20 @@ Demo: [lab2-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/2e867
 Kod: [lab3](https://github.com/cr0ow/E-Business-2024/tree/master/lab3/ktor-sample)
 
 Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/c64de11f-8425-42a5-9378-9c111ae51657)
+
+
+**Zadanie 4** Go
+
+:white_check_mark: Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
+
+:white_check_mark: Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
+
+:white_check_mark: Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+
+:white_check_mark: Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
+
+:x: pogrupować zapytania w gorm’owe scope'y
+
+Kod: [lab4](https://github.com/cr0ow/E-Business-2024/tree/master/lab4)
+
+Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/a22a52c2-50eb-4120-b6aa-3cbbe0d11779)
