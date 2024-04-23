@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  react-app:
+    build: ./react/
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spring-app
+
+  spring-app:
+    build: ./spring-boot-kotlin/
+    ports:
+      - "8080:8080"
