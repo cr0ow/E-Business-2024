@@ -63,4 +63,21 @@ Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/c64de
 
 Kod: [lab4](https://github.com/cr0ow/E-Business-2024/tree/master/lab4)
 
-Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/a22a52c2-50eb-4120-b6aa-3cbbe0d11779)
+Demo: [lab4-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/a22a52c2-50eb-4120-b6aa-3cbbe0d11779)
+
+
+**Zadanie 5** Frontend
+
+:white_check_mark: W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej
+
+:white_check_mark: Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+
+:white_check_mark: Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
+
+:white_check_mark: Należy dodać skrypt uruchamiający aplikację serwerową oraz kliencką na dockerze via docker-compose
+
+:x: Należy wykorzystać axios’a oraz dodać nagłówki pod CORS
+
+Kod: [lab5](https://github.com/cr0ow/E-Business-2024/tree/master/lab5)
+
+Demo: [lab5-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/e3bdc651-3c6a-4e9c-9143-0ee16b9cb2c4)
