@@ -9,8 +9,8 @@ case class Category(id: Long, name: String)
 @Singleton
 class CategoryController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  val p1 = "<h1>Category with id="
-  val p2 = " not found</h1>"
+  val p1: String = "<h1>Category with id="
+  val p2: String = " not found</h1>"
 
   def add: Action[AnyContent] = Action { request =>
     val jsonBody = request.body.asJson

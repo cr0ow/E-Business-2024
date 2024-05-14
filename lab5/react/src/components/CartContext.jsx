@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, {createContext, useContext, useMemo, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import PropTypes from "prop-types";
 
@@ -19,12 +19,19 @@ export const CartProvider = ({ children }) => {
         navigate(path)
     }
 
+    const contextValue = useMemo(() => ({
+        cartItems,
+        addToCart,
+        redirect,
+        setCartItems
+    }), [cartItems, addToCart, redirect, setCartItems]);
+
     return (
-        <CartContext.Provider value={{cartItems, addToCart, redirect, setCartItems}}>
-            <div id={'container'}>
-                {children}
-            </div>
-        </CartContext.Provider>
+      <CartContext.Provider value={contextValue}>
+          <div id={'container'}>
+              {children}
+          </div>
+      </CartContext.Provider>
     );
 };
 

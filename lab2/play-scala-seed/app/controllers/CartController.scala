@@ -7,8 +7,8 @@ import models._
 @Singleton
 class CartController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  val p1 = "<h1>Cart with id="
-  val p2 = " not found</h1>"
+  val p1: String = "<h1>Cart with id="
+  val p2: String = " not found</h1>"
 
   def add: Action[AnyContent] = Action {
     CartListModel.add()

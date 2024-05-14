@@ -9,9 +9,9 @@ case class Product(id: Long, name: String, description: String, categoryId: Long
 @Singleton
 class ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  val p1 = "<h1>Product with id="
-  val p2 = " not found</h1>"
-  val p3 = "<h1>Category with id="
+  val p1: String = "<h1>Product with id="
+  val p2: String = " not found</h1>"
+  val p3: String = "<h1>Category with id="
 
   def add: Action[AnyContent] = Action { request =>
     val jsonBody = request.body.asJson
