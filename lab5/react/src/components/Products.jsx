@@ -25,7 +25,7 @@ function Products() {
             <ul>
                 {
                     products.map(((product, index) => {
-                        return (<li key={index}>{product.name}, {product.price} PLN <button
+                        return (<li key={product.id}>{product.name}, {product.price} PLN <button
                             onClick={() => addToCart(product)}>Add to cart</button></li>);
                     }))
                 }

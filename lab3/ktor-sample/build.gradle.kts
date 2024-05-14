@@ -22,11 +22,13 @@ repositories {
     maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
+const val kordVersion = "0.13.1"
+
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("dev.kord:kord-core:0.13.1")
+    implementation("dev.kord:kord-core:$kordVersion")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }

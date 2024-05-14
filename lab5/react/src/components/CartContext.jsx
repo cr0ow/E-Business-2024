@@ -6,7 +6,7 @@ const CartContext = createContext(undefined);
 
 export const useCart = () => useContext(CartContext);
 
-export const CartProvider = () => {
+export const CartProvider = ({ children }) => {
     let [cartItems, setCartItems] = useState([]);
     const navigate = useNavigate();
 
