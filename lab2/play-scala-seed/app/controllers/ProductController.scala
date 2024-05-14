@@ -59,7 +59,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
         val description = json("description").as[String]
         val categoryId = json("categoryId").as[Long]
         if (CategoryListModel.getById(categoryId) == null) {
-          val message: String = p3 + categoryId + " p2
+          val message: String = p3 + categoryId + p2
           NotFound(message)
         }
         if (ProductListModel.update(productId, name, description, categoryId) == -1) {
