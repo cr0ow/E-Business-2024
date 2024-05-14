@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import PropTypes from "prop-types";
 
@@ -6,7 +6,7 @@ const CartContext = createContext(undefined);
 
 export const useCart = () => useContext(CartContext);
 
-export const CartProvider = ({ children }) => {
+export const CartProvider = () => {
     let [cartItems, setCartItems] = useState([]);
     const navigate = useNavigate();
 

@@ -9,6 +9,9 @@ case class Category(id: Long, name: String)
 @Singleton
 class CategoryController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
+  val p1 = "<h1>Category with id="
+  val p2 = " not found</h1>"
+
   def add: Action[AnyContent] = Action { request =>
     val jsonBody = request.body.asJson
     jsonBody.map { json =>
@@ -33,7 +36,7 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
   def getById(categoryId: Long): Action[AnyContent] = Action {
     val category = CategoryListModel.getById(categoryId)
     if (category == null) {
-      val message: String = "<h1>Category with id=" + categoryId + " not found</h1>"
+      val message: String = p1 + categoryId + p2
       NotFound(message)
     }
     else {
@@ -47,7 +50,7 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
       try {
         val name = json("name").as[String]
         if (CategoryListModel.update(categoryId, name) == -1) {
-          val message: String = "<h1>Category with id=" + categoryId + " not found</h1>"
+          val message: String = p1 + categoryId + p2
           NotFound(message)
         }
         else {
@@ -65,7 +68,7 @@ class CategoryController @Inject()(val controllerComponents: ControllerComponent
 
   def delete(categoryId: Long): Action[AnyContent] = Action {
     if(!CategoryListModel.deleteById(categoryId)) {
-      val message: String = "<h1>Category with id=" + categoryId + " not found</h1>"
+      val message: String = p1 + categoryId + p2
       NotFound(message)
     }
     else {

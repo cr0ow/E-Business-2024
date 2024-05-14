@@ -16,7 +16,7 @@ function Products() {
                 console.log(err);
             }
         }
-        fetchProducts();
+        fetchProducts().then(r => r);
     }, []);
 
     return (

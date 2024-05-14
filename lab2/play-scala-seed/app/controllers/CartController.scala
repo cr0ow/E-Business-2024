@@ -7,6 +7,9 @@ import models._
 @Singleton
 class CartController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
+  val p1 = "<h1>Cart with id="
+  val p2 = " not found</h1>"
+
   def add: Action[AnyContent] = Action {
     CartListModel.add()
     Ok(views.html.getAllCarts(CartListModel.getAll))
@@ -19,7 +22,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
   def getById(cartId: Long): Action[AnyContent] = Action {
     val cart = CartListModel.getById(cartId)
     if (cart == null) {
-      val message: String = "<h1>Cart with id=" + cartId + " not found</h1>"
+      val message: String = p1 + cartId + p2
       NotFound(message)
     }
     else {
@@ -34,7 +37,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
         val items = json("items").as[List[Long]]
         println(items)
         if(CartListModel.update(cartId, items) == -1) {
-          val message: String = "<h1>Cart with id=" + cartId + " not found</h1>"
+          val message: String = p1 + cartId + p2
           NotFound(message)
         }
         else {
@@ -52,7 +55,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
 
   def delete(cartId: Long): Action[AnyContent] = Action {
     if(!CartListModel.deleteById(cartId)) {
-      val message: String = "<h1>Cart with id=" + cartId + " not found</h1>"
+      val message: String = p1 + cartId + p2
       NotFound(message)
     }
     else {
@@ -62,7 +65,7 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
 
   def addToCart(cartId: Long, productId: Long): Action[AnyContent] = Action {
     if(CartListModel.getById(cartId) == null) {
-      val message: String = "<h1>Cart with id=" + cartId + " not found</h1>"
+      val message: String = p1 + cartId + p2
       NotFound(message)
     }
     else if (ProductListModel.getById(productId) == null) {
@@ -77,11 +80,11 @@ class CartController @Inject()(val controllerComponents: ControllerComponents) e
 
   def removeFromCart(cartId: Long, productId: Long): Action[AnyContent] = Action {
     if (CartListModel.getById(cartId) == null) {
-      val message: String = "<h1>Cart with id=" + cartId + " not found</h1>"
+      val message: String = p1 + cartId + p2
       NotFound(message)
     }
     else if (ProductListModel.getById(productId) == null) {
-      val message: String = "<h1>Product with id=" + productId + " not found</h1>"
+      val message: String = p1 + productId + p2
       NotFound(message)
     }
     else {

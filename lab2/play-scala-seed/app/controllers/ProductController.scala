@@ -9,6 +9,10 @@ case class Product(id: Long, name: String, description: String, categoryId: Long
 @Singleton
 class ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
+  val p1 = "<h1>Product with id="
+  val p2 = " not found</h1>"
+  val p3 = "<h1>Category with id="
+
   def add: Action[AnyContent] = Action { request =>
     val jsonBody = request.body.asJson
     jsonBody.map { json =>
@@ -17,7 +21,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
         val description = json("description").as[String]
         val categoryId = json("categoryId").as[Long]
         if(CategoryListModel.getById(categoryId) == null) {
-          val message: String = "<h1>Category with id=" + categoryId + " not found</h1>"
+          val message: String = p3 + categoryId + p2
           NotFound(message)
         }
         ProductListModel.add(name, description, categoryId)
@@ -39,7 +43,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
   def getById(productId: Long): Action[AnyContent] = Action {
     val product = ProductListModel.getById(productId)
     if (product == null) {
-      val message: String = "<h1>Product with id=" + productId + " not found</h1>"
+      val message: String = p1 + productId + p2
       NotFound(message)
     }
     else {
@@ -55,11 +59,11 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
         val description = json("description").as[String]
         val categoryId = json("categoryId").as[Long]
         if (CategoryListModel.getById(categoryId) == null) {
-          val message: String = "<h1>Category with id=" + categoryId + " not found</h1>"
+          val message: String = p3 + categoryId + " p2
           NotFound(message)
         }
         if (ProductListModel.update(productId, name, description, categoryId) == -1) {
-          val message: String = "<h1>Product with id=" + productId + " not found</h1>"
+          val message: String = p1 + productId + p2
           NotFound(message)
         }
         else {
@@ -77,7 +81,7 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
 
   def delete(productId: Long): Action[AnyContent] = Action {
     if(!ProductListModel.deleteById(productId)) {
-      val message: String = "<h1>Product with id=" + productId + " not found</h1>"
+      val message: String = p1 + productId + p2
       NotFound(message)
     }
     else {
