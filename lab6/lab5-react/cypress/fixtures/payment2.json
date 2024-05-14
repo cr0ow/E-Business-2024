@@ -1,0 +1,21 @@
+{
+  "id": 2,
+  "amount": 10.5,
+  "products": [
+    {
+      "id": 1,
+      "name": "Butter",
+      "price": 3.5
+    },
+    {
+      "id": 1,
+      "name": "Butter",
+      "price": 3.5
+    },
+    {
+      "id": 1,
+      "name": "Butter",
+      "price": 3.5
+    }
+  ]
+}
