@@ -2,9 +2,7 @@ FROM ubuntu:22.04
 
 ENV TZ=Europe/Warsaw
 
-RUN apt-get update
-RUN apt install software-properties-common -y
-RUN apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+RUN apt-get update && apt -y install software-properties-common && apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 
 # 3.0
 RUN wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz

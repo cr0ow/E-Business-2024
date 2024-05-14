@@ -8,31 +8,34 @@ import (
 )
 
 var db, err = gorm.Open(sqlite.Open("lab4.db"), &gorm.Config{})
+var errMessage = "Error during database migration: %v"
 
 func main() {
 	if err != nil {
-		log.Fatalf("Cannot connect to database: %v", err)
+		log.Fatalf(errMessage, err)
 	}
 	err = db.AutoMigrate(&Category{})
 	if err != nil {
-		log.Fatalf("Error during database migration: %v", err)
+		log.Fatalf(errMessage, err)
 	}
 	err = db.AutoMigrate(&Product{})
 	if err != nil {
-		log.Fatalf("Error during database migration: %v", err)
+		log.Fatalf(errMessage, err)
 	}
 	err = db.AutoMigrate(&Cart{})
 	if err != nil {
-		log.Fatalf("Error during database migration: %v", err)
+		log.Fatalf(errMessage, err)
 	}
 
 	echoInstance := echo.New()
 
+    var product_id = "/products/:id"
+
 	echoInstance.POST("/products", createProduct)
 	echoInstance.GET("/products", getProducts)
-	echoInstance.GET("/products/:id", getProduct)
-	echoInstance.PUT("/products/:id", updateProduct)
-	echoInstance.DELETE("/products/:id", deleteProduct)
+	echoInstance.GET(product_id, getProduct)
+	echoInstance.PUT(product_id, updateProduct)
+	echoInstance.DELETE(product_id, deleteProduct)
 
 	echoInstance.POST("/cart", createCart)
 	echoInstance.GET("/cart/:id", getCart)

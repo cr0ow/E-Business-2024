@@ -22,7 +22,7 @@ export const CartProvider = () => {
     return (
         <CartContext.Provider value={{cartItems, addToCart, redirect, setCartItems}}>
             <div id={'container'}>
-                {this.props.children}
+                {children}
             </div>
         </CartContext.Provider>
     );
