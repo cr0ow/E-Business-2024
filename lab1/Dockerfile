@@ -28,4 +28,7 @@ RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && cd gradle-test && g
 COPY run.sh .
 RUN chmod +x run.sh
 
+RUN addgroup -S nonroot && adduser -S nonroot -G nonroot
+USER nonroot
+
 CMD "./run.sh"
