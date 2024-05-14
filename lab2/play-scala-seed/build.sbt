@@ -9,6 +9,9 @@ scalaVersion := "2.13.13"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0" % Test
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % "test"
+libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "3.141.59"
+
 libraryDependencies += filters
 
 
