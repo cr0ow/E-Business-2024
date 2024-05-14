@@ -20,9 +20,9 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-          path: ./lab4
+          path: /home/runner/work/E-Business-2024/E-Business-2024/lab4
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
           version: v1.58
-          path: ./lab4
+          path: /home/runner/work/E-Business-2024/E-Business-2024/lab4
