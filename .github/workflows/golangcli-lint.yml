@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  # Optional: allow read access to pull request. Use with `only-new-issues` option.
-  # pull-requests: read
 
 jobs:
   golangci:
@@ -20,7 +18,6 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-          working-directory: /home/runner/work/E-Business-2024/E-Business-2024/lab4
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
