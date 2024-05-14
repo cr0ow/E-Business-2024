@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 ENV TZ=Europe/Warsaw
 WORKDIR /home/play-scala-slick-example/
 
-RUN apt update && apt -y install software-properties-common openjdk-17-jre openjdk-17-jdk curl unzip scala && apt clean
+RUN apt update && apt --no-install-recommends -y install software-properties-common openjdk-17-jre openjdk-17-jdk curl unzip scala && apt clean
 
 RUN echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | tee /etc/apt/sources.list.d/sbt.list
 RUN echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | tee /etc/apt/sources.list.d/sbt_old.list
