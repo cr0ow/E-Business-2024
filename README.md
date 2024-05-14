@@ -51,6 +51,9 @@ Demo: [lab3-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/c64de
 
 **Zadanie 4** Go
 
+[![Sonar](https://img.shields.io/badge/SonarQube-Project_Report-blue?style=flat&logo=sonarqube)](https://sonarcloud.io/summary/new_code?id=cr0ow_E-Business-2024)
+
+
 :white_check_mark: Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
 
 :white_check_mark: Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
@@ -81,3 +84,22 @@ Demo: [lab4-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/a22a5
 Kod: [lab5](https://github.com/cr0ow/E-Business-2024/tree/master/lab5)
 
 Demo: [lab5-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/e3bdc651-3c6a-4e9c-9143-0ee16b9cb2c4)
+
+
+**Zadanie 7 Sonar**
+
+Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa repozytoria) do Sonara w wersji chmurowej (https://sonarcloud.io/). Należy poprawić aplikacje uzyskując 0 bugów, 0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy dodać widżety sonarowe do README w repozytorium dane projektu z wynikami.
+
+:white_check_mark: Należy dodać litera do odpowiedniego kodu aplikacji serwerowej w hookach gita
+
+:white_check_mark: Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji serwerowej)
+
+:white_check_mark: Należy wyeliminować wszystkie zapaszki w kodzie w Sonarze (kod aplikacji serwerowej)
+
+:white_check_mark: Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej)
+
+:white_check_mark: Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
+
+README: [lab7](https://github.com/cr0ow/E-Business-2024/tree/master/lab7)
+
+Demo: [lab7-demo](https://github.com/cr0ow/E-Business-2024/tree/master/demos/lab7.png)
