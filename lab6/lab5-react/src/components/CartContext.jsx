@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import PropTypes from "prop-types";
 
 const CartContext = createContext(undefined);
 
@@ -19,10 +20,14 @@ export const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value={{cartItems, addToCart, redirect, setCartItems}}>
-            <div id={'container'}>
-                {children}
-            </div>
-        </CartContext.Provider>
+      <CartContext.Provider value={{cartItems, addToCart, redirect, setCartItems}}>
+          <div id={'container'}>
+              {children}
+          </div>
+      </CartContext.Provider>
     );
 };
+
+CartProvider.propTypes = {
+    children: PropTypes.node.isRequired
+}

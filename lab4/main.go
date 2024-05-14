@@ -29,13 +29,13 @@ func main() {
 
 	echoInstance := echo.New()
 
-    var product_id = "/products/:id"
+    var productId = "/products/:id"
 
 	echoInstance.POST("/products", createProduct)
 	echoInstance.GET("/products", getProducts)
-	echoInstance.GET(product_id, getProduct)
-	echoInstance.PUT(product_id, updateProduct)
-	echoInstance.DELETE(product_id, deleteProduct)
+	echoInstance.GET(productId, getProduct)
+	echoInstance.PUT(productId, updateProduct)
+	echoInstance.DELETE(productId, deleteProduct)
 
 	echoInstance.POST("/cart", createCart)
 	echoInstance.GET("/cart/:id", getCart)

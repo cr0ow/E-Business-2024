@@ -12,7 +12,7 @@ RUN ./configure --enable-optimizations && make -j 8 && make altinstall
 ENV PATH="${PATH}:${HOME}/Python-3.8.0"
 
 # 3.5
-RUN apt -y install openjdk-8-jre openjdk-8-jdk && apt cache clean
+RUN apt -y install openjdk-8-jre openjdk-8-jdk && apt clean
 RUN apt-get -y install unzip zip curl && apt-get clean
 RUN curl -s "https://get.sdkman.io" | bash
 RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
