@@ -18,4 +18,7 @@ COPY play-scala-seed .
 COPY run.sh .
 RUN chmod +x run.sh
 
+RUN addgroup -S nonroot && adduser -S nonroot -G nonroot
+USER nonroot
+
 CMD "./run.sh"

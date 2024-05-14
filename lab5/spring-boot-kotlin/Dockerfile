@@ -11,5 +11,7 @@ RUN chmod +x ./gradlew
 RUN microdnf -y install findutils
 EXPOSE 8080
 
-#CMD ["./gradlew", "bootRun"]
-CMD ["/bin/bash"]
+RUN addgroup -S nonroot && adduser -S nonroot -G nonroot
+USER nonroot
+
+CMD ["./gradlew", "bootRun"]
