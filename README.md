@@ -86,6 +86,23 @@ Kod: [lab5](https://github.com/cr0ow/E-Business-2024/tree/master/lab5)
 Demo: [lab5-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/e3bdc651-3c6a-4e9c-9143-0ee16b9cb2c4)
 
 
+**Zadanie 6** Testy
+
+:white_check_mark: Należy stworzyć 20 przypadków testowych w CypressJS lub Selenium (Kotlin, Python, Java, JS, Go, Scala)
+
+:white_check_mark: Należy rozszerzyć testy funkcjonalne, aby zawierały minimum 50 asercji
+
+:white_check_mark: Należy stworzyć testy jednostkowe do wybranego wcześniejszego projektu z minimum 50 asercjami
+
+:x: Należy dodać testy API, należy pokryć wszystkie endpointy z minimum jednym scenariuszem negatywnym per endpoint
+
+:x: Należy uruchomić testy funkcjonalne na Browserstacku
+
+Kod: [lab6](https://github.com/cr0ow/E-Business-2024/tree/master/lab6)
+
+Demo: [lab6-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/1098619e-168d-4c87-8f3e-f6fa98a86a95)
+
+
 **Zadanie 7 Sonar**
 
 Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa repozytoria) do Sonara w wersji chmurowej (https://sonarcloud.io/). Należy poprawić aplikacje uzyskując 0 bugów, 0 zapaszków, 0 podatności, 0 błędów bezpieczeństwa. Dodatkowo należy dodać widżety sonarowe do README w repozytorium dane projektu z wynikami.
