@@ -137,6 +137,6 @@ Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 
 :x: zapisywanie danych logowania OAuth2 po stronie serwera
 
-README: [lab8](https://github.com/cr0ow/E-Business-2024/tree/master/lab8)
+Kod: [lab8](https://github.com/cr0ow/E-Business-2024/tree/master/lab8)
 
 Demo: [lab8-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/5bd3afa6-8cd1-4bc2-9ffa-0671a0bdfcaa)
