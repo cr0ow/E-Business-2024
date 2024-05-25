@@ -1,8 +1,15 @@
 import '../styles.css';
-import React, {useState} from "react";
-import {Link} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-export default function LoginForm() {
+export default function Form({main, other, message}) {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const mainText = location.state?.main || main;
+  const otherText = location.state?.other || other;
+  const messageText = location.state?.message || message;
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,27 +23,67 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signIn(login, password);
+    if (login.trim() === '' || password.trim() === '') {
+      const warning = document.getElementById('warning');
+      warning.style.color = 'red';
+      warning.innerText = 'Both login and password must be provided';
+      return;
+    }
+    if (mainText === 'Sign in') {
+      submitLogin(login, password);
+    } else {
+      submitRegister(login, password);
+    }
   };
 
-  const signIn = async (login, email) => {
+  const submitLogin = async (login, password) => {
     const res = await fetch('http://localhost:8000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ login, password })
+      body: JSON.stringify({login, password})
     });
-    if(res.status === 400) {
+    if (res.status === 403) {
       const warning = document.getElementById('warning');
       warning.style.color = 'red';
       warning.innerText = 'Invalid login or password';
+    } else {
+      const data = await res.json();
+      Cookies.set('jwt', data.accessToken);
+      navigate('/welcome')
     }
   }
 
+  const submitRegister = async (login, password) => {
+    const res = await fetch('http://localhost:8000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({login, password})
+    });
+    if (res.status === 400) {
+      const warning = document.getElementById('warning');
+      warning.style.color = 'red';
+      warning.innerText = 'Account with this login already exists';
+    } else {
+      navigate('/')
+      const warning = document.getElementById('warning');
+      warning.style.color = 'black';
+      warning.innerText = 'You are signed up, try to log in now!';
+    }
+  }
+
+  useEffect(() => {
+    const warning = document.getElementById('warning');
+    warning.style.color = 'black';
+    warning.innerText = '';
+  }, []);
+
   return (
     <div id={'container'}>
-      <h1>Sign in</h1>
+      <h1>{mainText}</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="login">Login</label>
         <input
@@ -52,10 +99,17 @@ export default function LoginForm() {
           value={password}
           onChange={handlePasswordChange}
         />
-        <input type="submit" value="Sign in"/>
+        <input type="submit" value={`${mainText}`}/>
         <span id={'warning'}></span>
       </form>
-      <Link to={'/register'}>Sign up</Link>
+      <Link
+        to={{
+          pathname: mainText === 'Sign in' ? '/register' : '/',
+          state: {main: otherText, other: mainText, message: messageText}
+        }}
+      >
+        {otherText}
+      </Link>
     </div>
   );
 }

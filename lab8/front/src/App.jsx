@@ -1,20 +1,17 @@
-import './App.css';
 import React from "react";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Form from './components/Form';
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <BrowserRouter>
-
+      <Routes>
+        <Route path={'/'} element={<Form main={'Sign in'} other={'Sign up'} message={''}/>}></Route>
+        <Route path={'/register'} element={<Form main={'Sign up'} other={'Sign in'} message={''}/>}></Route>
+        <Route path={'/welcome'} element={<Welcome/>}></Route>
+      </Routes>
     </BrowserRouter>
-    <div id={'container'}>
-      <form>
-        <label for={'login'}>Login</label>
-        <input id={'login'} type={'text'}/>
-        <label for={'password'}>Password</label>
-        <input id={'password'} type={'password'}/>
-      </form>
-      <Link></Link>
-    </div>
   );
 }
 

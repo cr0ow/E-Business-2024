@@ -120,3 +120,23 @@ Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa r
 README: [lab7](https://github.com/cr0ow/E-Business-2024/tree/master/lab7)
 
 Demo: [lab7-demo](https://github.com/cr0ow/E-Business-2024/tree/master/demos/lab7.png)
+
+**Zadanie 8 OAuth2**
+
+Należy skonfigurować klienta Oauth2 (4.0). Dane o użytkowniku wraz z tokenem powinny być przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) powinien zostać wysłany do klienta (React). Można zastosować mechanizm sesji lub inny dowolny (5.0). Zabronione jest tworzenie klientów bezpośrednio po stronie React'a wyłączając z komunikacji aplikację serwerową, np. wykorzystując auth0.
+
+Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
+
+:white_check_mark: logowanie przez aplikację serwerową (bez Oauth2)
+
+:white_check_mark: rejestracja przez aplikację serwerową (bez Oauth2)
+
+:x: logowanie via Google OAuth2
+
+:x: logowanie via Facebook lub Github OAuth2
+
+:x: zapisywanie danych logowania OAuth2 po stronie serwera
+
+README: [lab8](https://github.com/cr0ow/E-Business-2024/tree/master/lab8)
+
+Demo: [lab8-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/5bd3afa6-8cd1-4bc2-9ffa-0671a0bdfcaa)
