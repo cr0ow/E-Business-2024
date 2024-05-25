@@ -1,6 +1,0 @@
-.idea/*
-*/.idea
-.vscode/*
-node_modules
-lab5/node_modules
-lab5/react/node_modules
