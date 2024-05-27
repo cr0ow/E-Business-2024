@@ -1,12 +1,10 @@
 from flask import Flask, request, jsonify
-#from transformers import pipeline
 from flask_cors import CORS
 from random import random
+import requests
 
 app = Flask(__name__)
 CORS(app)
-
-#chat_model = pipeline('text-generation', model='gpt-2')
 
 welcome_messages = [
     "Cześć! Jak mogę Ci dzisiaj pomóc?",
@@ -25,9 +23,17 @@ goodbye_messages = [
 ]
 
 
+def query_llama2(message):
+    response = requests.post(
+        'http://localhost:11434/api/generate',
+        json={"model":"llama2", "prompt": message, "stream": False}
+    )
+    return response.json()
+
+
 @app.route('/welcome', methods=['GET'])
 def welcome():
-    return jsonify({"welcomeMessage": welcome_messages[random() % 5]})
+    return jsonify({"welcomeMessage": welcome_messages[int(random() * 5)]})
 
 
 @app.route('/chat', methods=['POST'])
@@ -35,7 +41,7 @@ def chat():
     data = request.json
     user_input = data.get("message")
 
-    result = ''#chat_model(user_input, max_length=50)
+    result = query_llama2(user_input)
     response_text = result[0]['generated_text']
 
     return jsonify({"response": response_text})
@@ -43,8 +49,8 @@ def chat():
 
 @app.route('/goodbye', methods=['GET'])
 def goodbye():
-    return jsonify({"goodbyeMessage": goodbye_messages[random() % 5]})
+    return jsonify({"goodbyeMessage": goodbye_messages[int(random() * 5)]})
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
