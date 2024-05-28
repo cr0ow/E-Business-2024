@@ -7,26 +7,26 @@ app = Flask(__name__)
 CORS(app)
 
 welcome_messages = [
-    "Cześć! Jak mogę Ci dzisiaj pomóc?",
-    "Witam! Co mogę dla Ciebie zrobić?",
-    "Hej! Jakie masz pytania na dzisiaj?",
-    "Dzień dobry! W czym mogę służyć?",
-    "Cześć! Jak mogę Ci pomóc w sklepie?"
+    "Hi! How can I help you today?",
+    "Welcome! What can I do for you?",
+    "Hey! What questions do you have for today?",
+    "Good morning! How can I assist you?",
+    "Hi! How can I help you in the store?"
 ]
 
 goodbye_messages = [
-    "Dziękuję za rozmowę! Czy mogę jeszcze w czymś pomóc?",
-    "To wszystko na dzisiaj. Miłego dnia!",
-    "Dziękuję za pytania. Jeśli będziesz potrzebować więcej pomocy, jestem tutaj!",
-    "Mam nadzieję, że mogłem pomóc. Do zobaczenia!",
-    "Dziękuję za skorzystanie z naszych usług. Życzę miłego dnia!"
+    "Thank you for the conversation! Is there anything else I can assist you with?",
+    "That's all for today. Have a great day!",
+    "Thank you for your questions. If you need more help, I'm here!",
+    "I hope I could help. See you next time!",
+    "Thank you for using our services. Have a nice day!"
 ]
 
 
-def query_llama2(message):
+def query_llama(message):
     response = requests.post(
         'http://localhost:11434/api/generate',
-        json={"model":"llama2", "prompt": message, "stream": False}
+        json={"model":"llama3", "prompt": message, "stream": False}
     )
     return response.json()
 
@@ -40,11 +40,8 @@ def welcome():
 def chat():
     data = request.json
     user_input = data.get("message")
-
-    result = query_llama2(user_input)
-    response_text = result[0]['generated_text']
-
-    return jsonify({"response": response_text})
+    result = query_llama(user_input)
+    return jsonify({"response": result})
 
 
 @app.route('/goodbye', methods=['GET'])

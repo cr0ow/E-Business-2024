@@ -140,3 +140,23 @@ Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 Kod: [lab8](https://github.com/cr0ow/E-Business-2024/tree/master/lab8)
 
 Demo: [lab8-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/5bd3afa6-8cd1-4bc2-9ffa-0671a0bdfcaa)
+
+**Zadanie 9 ChatGPT bot**
+
+Należy rozszerzyć funkcjonalność wcześniej stworzonego bota. Do niego należy stworzyć aplikajcę frontendową, która połączy się z osobnym serwisem, który przeanalizuje tekst od użytkownika i prześle zapytanie do GPT, a następnie prześle odpowiedź do użytkownika. Cały projekt należy stworzyć w Pythonie.
+
+Dla studentów, którzy nie chcą lub nie mogą korzystać z GPT, zamiast GPT należy wykorzystać LLAMA2 za pomocą narzędzi do wykorzystania LLM lokalnie: https://ollama.com/download/windows
+
+:white_check_mark: należy stworzyć po stronie serwerowej osobny serwis do łącznia z chatGPT do usługi chat
+
+:white_check_mark: należy stworzyć interfejs frontowy dla użytkownika, który komunikuje się z serwisem; odpowiedzi powinny być wysyałen do frontendowego interfejsu
+
+:white_check_mark: stworzyć listę 5 różnych otwarć oraz zamknięć rozmowy
+
+:x: filtrowanie po zagadnieniach związanych ze sklepem (np. ograniczenie się jedynie do ubrań oraz samego sklepu) do GPT
+
+:x: filtrowanie odpowiedzi po sentymencie
+
+Kod: [lab9](https://github.com/cr0ow/E-Business-2024/tree/master/lab9)
+
+Demo: [lab8-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/9518ac60-3560-4717-8110-087c691337a9)
