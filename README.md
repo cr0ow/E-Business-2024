@@ -159,4 +159,22 @@ Dla studentów, którzy nie chcą lub nie mogą korzystać z GPT, zamiast GPT na
 
 Kod: [lab9](https://github.com/cr0ow/E-Business-2024/tree/master/lab9)
 
-Demo: [lab8-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/9518ac60-3560-4717-8110-087c691337a9)
+Demo: [lab9-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/9518ac60-3560-4717-8110-087c691337a9)
+
+**Zadanie 10 CI**
+
+Należy wykorzystać GitHub Actions (dopuszczalne są inne rozwiązania CI) oraz chmurę Azure (dopuszczalne inne chmury), aby zbudować oraz zdeployować aplikację kliencką (frontend) oraz serwerową (backend) jako osobne dwie aplikacje. Należy do tego wykorzystać obrazy dockerowe, a aplikacje powinny działać na kontenerach. Dopuszczalne jest zbudowanie wcześniej aplikacji (jar package) oraz budowanie aplikacji via Github Actions. Należy zwrócić uwagę na zasoby dostępne na chmurze.
+
+:white_check_mark: Należy stworzyć odpowiednie instancje po stronie chmury na dockerze
+
+:x: Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
+
+:x: Dodać notyfikację mailową o zbudowaniu aplikacji
+
+:x: Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
+
+:x: Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions
+
+Kod: [lab10](https://github.com/cr0ow/E-Business-2024/tree/master/lab10)
+
+Demo: [lab10-demo](https://github.com/cr0ow/E-Business-2024/assets/70718059/a4301bb5-b9cd-453a-a009-409a663bc4f6)
